@@ -21,6 +21,12 @@ gem 'interactor', '~> 3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'graphlient'
+  gem 'factory_bot', "~> 4.0"
+  gem "factory_bot_rails", "~> 4.0"
+  gem 'byebug'
 end
 
 group :development do

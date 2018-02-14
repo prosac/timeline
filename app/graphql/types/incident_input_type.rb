@@ -1,4 +1,4 @@
-IncidentInputType = GraphQL::InputObjectType.define do
+Types::IncidentInputType = GraphQL::InputObjectType.define do
   name 'IncidentInputType'
   description 'Properties for creating an incident'
 
