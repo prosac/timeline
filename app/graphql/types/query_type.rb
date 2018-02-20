@@ -11,7 +11,7 @@ Types::QueryType = GraphQL::ObjectType.define do
 
   field :location do
     type Types::LocationType
-    argument :id, -> { debugger } # !types.String
+    argument :id, !types.String
     description 'Find a location by ID'
     resolve ->(_obj, args, _ctx) {
       Location.find(args['id'])

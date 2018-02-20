@@ -7,17 +7,24 @@ describe 'Location Query', type: :request do
 
   let(:query) do
     <<-GRAPHQL
-      query($id: String !) {
+      query($id: String!) {
         location(id: $id) {
           id
+          name
+          longitude
+          latitude
+          description
         }
       }
     GRAPHQL
   end
 
   it 'returns an location' do
-    debugger
-    response = client.execute(query, id: location.id)
-    expect(location.id).to eq response.data.location
+    response = client.execute(query, id: location.id.to_s)
+    data = response.data.location
+    expect(data.name).to eq location.name
+    expect(data.description).to eq location.description
+    expect(data.latitude).to eq location.latitude
+    expect(data.longitude).to eq location.longitude
   end
 end

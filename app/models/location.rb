@@ -1,6 +1,10 @@
+require 'contracts'
+
 class Location
   include Mongoid::Document
   include Geocoder::Model::Mongoid
+  include Contracts::Core
+  include Contracts::Builtin
 
   geocoded_by :address
   reverse_geocoded_by :coordinates
@@ -13,7 +17,13 @@ class Location
   field :coordinates, type: Array
   field :description, type: String
 
-  def to_address
-    'Kollaukamp 10 22453 Hamburg'
+  Contract NilClass => Float
+  def latitude
+    coordinates[0]
+  end
+
+  Contract NilClass => Float
+  def longitude
+    coordinates[1]
   end
 end
