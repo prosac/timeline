@@ -1,0 +1,190 @@
+// .mobile-height {
+//   height: 100vh;
+//   width: 100vw;
+// }
+.marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+/** timeline box structure **/
+.timeline {
+  // position: relative;
+  // horizontal line in middle of screen
+  @extend .row;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background-color: grey;
+    left: 5%;
+    margin-left: -1.5px;
+  }
+
+  .timeline-item-content {
+    outline: 1px solid red;
+  }
+
+  .time-line-icon {
+
+  }
+
+  .timeline-item {
+    @extend .col-10;
+    @extend .offset-2;
+    // set position and pad
+    // position: relative;
+    // small grey circles
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      border: solid 3px grey;
+      border-radius: 50%;
+      background-color: grey;
+      left: -14%;
+      top: .5rem;
+      margin-left: -.5rem;
+    }
+    span {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border: solid 3px grey;
+        border-radius: 50%;
+        background-color: white;
+        left: -14%;
+        bottom: 60%;
+        margin-left: -.5rem;
+      }
+      // large gray outlined circle
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        border: solid 3px grey;
+        border-radius: 50%;
+        background-color: white;
+        left: -14%;
+        top: 50%;
+        margin-left: -1rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  /** About Box**/
+  .mobile-height {
+    height: 100%;
+  }
+  .about-header {
+    position: relative;
+    padding-bottom: 1rem;
+    overflow: visible;
+    // horizontal line in middle of screen
+    &::before {
+      content: " ";
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 3px;
+      background-color: grey;
+      left: 5%;
+      margin-left: -1.5px;
+    }
+    //bottom horizontal line
+    &::after {
+      content: '';
+      position: absolute;
+      width: 70%;
+      left: 5%;
+      height: 3px;
+      background-color: grey;
+      bottom: 0;
+    }
+  }
+
+  .about-header-item {
+    position: relative;
+    padding: 1.5rem;
+    // middle horizontal lines
+    &:not(:first-child) {
+      &::before {
+        top: 0;
+        content: "";
+        position: absolute;
+        width: 50%;
+        left: 5%;
+        height: 3px;
+        background-color: grey;
+      }
+    }
+  }
+
+  /** timeline box structure **/
+  .timeline {
+    position: relative;
+    // horizontal line in middle of screen
+    &::before {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      content: "";
+      width: 3px;
+      height: 110%;
+      background-color: grey;
+      left: 5%;
+      margin-left: -1.5px;
+    }
+    .timeline-item {
+      // set position and pad
+      position: relative;
+      // small grey circles
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border: solid 3px grey;
+        border-radius: 50%;
+        background-color: grey;
+        left: 5%;
+        bottom: -2rem;
+        margin-left: -.5rem;
+      }
+      span {
+        &::before {
+          content: "";
+          position: absolute;
+          width: 1rem;
+          height: 1rem;
+          border: solid 3px grey;
+          border-radius: 50%;
+          background-color: white;
+          left: 5%;
+          bottom: 60%;
+          margin-left: -.5rem;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 2rem;
+          height: 2rem;
+          border: solid 3px grey;
+          border-radius: 50%;
+          background-color: white;
+          left: 5%;
+          top: 50%;
+          margin-left: -1rem;
+        }
+      }
+    }
+  }
+}

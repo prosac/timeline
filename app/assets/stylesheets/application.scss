@@ -1,1 +1,53 @@
+$body-bg: #ffffff;
+$text-color: #373737;
+$gray-base: #494949;
+$gray-darker: #222;
+$gray-dark: #333;
+$gray: #555;
+$gray-light: #777;
+$gray-lighter: #eee;
+$brand-primary: #1f9eba;
+$brand-success: #59ba1f;
+$brand-info: #5bc0de;
+$brand-warning: #d1bd10;
+$brand-danger: #ba1f1f;
+
 @import "Bootstrap";
+@import "./timeline";
+
+.outlines {
+  outline: 1px solid gray;
+}
+
+.devlabel {
+  @extend .mx-auto;
+  @extend .align-self-center;
+}
+
+.timeline-container {
+  @extend .col-12;
+  @extend .col-sm-6;
+  @extend .col-md-3;
+  @extend .col-lg-4;
+  background: $gray-200;
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+}
+
+
+.map-container {
+  @extend .col-12;
+  @extend .col-sm-6;
+  @extend .col-md;
+  background: $gray-100;
+  display: flex;
+}
+
+.information-container {
+  @extend .col-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+  background: $gray-300;
+  display: flex;
+}
