@@ -21,6 +21,7 @@ gem 'interactor', '~> 3.0'
 gem 'graphiql-rails'
 gem 'contracts'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
