@@ -1,4 +1,4 @@
-EventsOnAMapSchema = GraphQL::Schema.define do
+TimelineSchema = GraphQL::Schema.define do
   mutation(Types::MutationType)
   query(Types::QueryType)
 end

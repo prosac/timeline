@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: events_on_a_map_production
+  channel_prefix: timeline_production

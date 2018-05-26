@@ -1,5 +1,5 @@
 {
-  "name": "events_on_a_map",
+  "name": "timeline",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.2.2"
